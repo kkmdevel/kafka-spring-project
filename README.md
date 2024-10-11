@@ -1,59 +1,31 @@
 # Kafka-Spring Project
 
-A Spring Boot project for Kafka integration, demonstrating basic message production and consumption.
+Spring과 Kafka를 이용한 실시간 스트리밍 데이터 처리 시스템
 
 ![Build Status](https://img.shields.io/travis/com/kkmdevel/kafka-spring-project)
 ![License](https://img.shields.io/github/license/kkmdevel/kafka-spring-project)
 
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+## 목차
+- [소개](#소개)
+- [시스템 아키텍처](#시스템-아키텍처)
+- [설치](#설치)
+- [사용법](#사용법)
+- [주요 기능](#주요-기능)
+- [사용된 기술 스택](#사용된-기술-스택)
+- [기여 방법](#기여-방법)
+- [라이선스](#라이선스)
+- [연락처](#연락처)
 
-## Installation
+## 소개
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/kkmdevel/kafka-spring-project.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd kafka-spring-project
-   ```
-3. Build and run the project using Maven:
-   ```bash
-   mvn clean install
-   mvn spring-boot:run
-   ```
+이 프로젝트는 **2024년 4월 21일부터 6월 24일까지** 진행된 실시간 스트리밍 데이터 처리 시스템 구축 프로젝트입니다.  
+웹에서 실시간으로 생성되는 데이터를 수집하고, 지정된 기준에 맞춰 데이터를 가공한 후 데이터베이스에 저장하는 시스템을 구현하였습니다.  
 
-### Prerequisites
-- Java 11+
-- Apache Kafka (local setup or cloud)
-- Maven 3.6+
+이 시스템은 데이터 분석 및 처리를 통해 마케팅 전략 수립에 큰 영향을 미칠 수 있는 중요한 정보를 제공합니다.  
+특히, 실시간으로 데이터를 처리함으로써 사용자 행동을 빠르게 파악하고, 이에 맞춘 마케팅 전략을 실시간으로 조정할 수 있어  
+기업의 성과 향상에 기여할 수 있습니다.
 
-## Usage
+## 시스템 아키텍처
+이 시스템은 Kafka를 메시지 브로커로 사용하는 프로듀서-컨슈머 아키텍처를 따릅니다. 아래 다이어그램은 데이터의 흐름을 나타냅니다:
 
-After starting the application, you can produce messages to Kafka by making a POST request to:
-
-```bash
-curl -X POST http://localhost:8080/kafka/publish -d '{"message": "Hello, Kafka!"}'
-```
-
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Commit your changes (`git commit -m 'Add new feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Open a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-If you have any questions, feel free to reach out at kkmdevel@example.com.
+![시스템 아키텍쳐](docs/images/김경민,남윤성_스트리밍 데이터 처리 시스템_시스템구성도.png)
