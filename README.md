@@ -190,7 +190,7 @@ Kafka와 Spring Boot를 활용하여 웹에서 생성되는 로그 데이터를 
 
 ### 8. 스트림 설명
 
-- **API**: `POST /kafka/describe/{sourceStreamName}`
+- **API**: `GET /kafka/describe/{sourceStreamName}`
 - **설명**: 지정된 스트림의 메타데이터를 설명합니다.
 - **파라미터**:
   - `sourceStreamName`: 설명할 스트림의 이름
