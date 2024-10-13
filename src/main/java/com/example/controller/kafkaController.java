@@ -67,7 +67,7 @@ public class kafkaController {
         exitDetection.streamsExitDetection(sourceStreamName, streamName, topicName);
     }
 
-    @PostMapping("/describe/{sourceStreamName}")
+    @GetMapping("/describe/{sourceStreamName}")
     public void describe(@PathVariable String sourceStreamName) {
         describe.describeStream(sourceStreamName);
     }
