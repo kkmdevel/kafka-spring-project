@@ -1,8 +1,5 @@
-# Kafka-Spring Project
+# Spring과 Kafka를 이용한 실시간 스트리밍 데이터 처리 시스템
 ![프로젝트 판넬](docs/images/kafka프로젝트판넬.png)
-
-
-Spring과 Kafka를 이용한 실시간 스트리밍 데이터 처리 시스템
 
 ## 📚 목차
 - [📖 소개](#소개)
@@ -14,7 +11,7 @@ Spring과 Kafka를 이용한 실시간 스트리밍 데이터 처리 시스템
 
 ## 📖 소개
 
-- **프로젝트 기간**: 2024년 4월 21일 ~ 2024년 6월 24일
+**프로젝트 기간**: 2024년 4월 21일 ~ 2024년 6월 24일
 
 이 프로젝트는 **웹 로그 데이터를 실시간으로 처리**하는 시스템을 구축하는 것을 목표로 했습니다.  
 Kafka와 Spring Boot를 활용하여 웹에서 생성되는 로그 데이터를 실시간으로 데이터베이스에 수집하고, 사용자가 원하는 기준에 맞춰 데이터를 가공하여 target 데이터베이스에 저장합니다.
@@ -51,40 +48,6 @@ Kafka와 Spring Boot를 활용하여 웹에서 생성되는 로그 데이터를 
 
 ![기술 스택 다이어그램](docs/images/시스템구성도.png)
 
-## ⚙️ 시스템 아키텍처
-
-```bash
-├── README.md
-├── .gitignore
-├── pom.xml
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com
-│   │   │       └── example
-│   │   │           └── kafkaproject
-│   │   │               ├── config
-│   │   │               │   └── appConfig.java        # 애플리케이션의 설정을 관리하는 클래스
-│   │   │               ├── connector
-│   │   │               │   ├── sinkConnector.java    # Kafka와 데이터베이스 연동을 담당하는 Sink Connector
-│   │   │               │   └── sourceConnector.java  # 데이터 소스와 Kafka 연동을 담당하는 Source Connector
-│   │   │               ├── controller
-│   │   │               │   └── kafkaController.java  # Kafka 관련 요청을 처리하는 컨트롤러
-│   │   │               ├── log
-│   │   │               │   └── createLog.java        # 로그 생성 및 처리 담당
-│   │   │               ├── service
-│   │   │               │   ├── addColumn.java        # 테이블에 컬럼을 추가하는 로직
-│   │   │               │   ├── createStream.java     # Kafka 스트림을 생성하는 로직
-│   │   │               │   ├── describe.java         # 테이블/스트림 설명을 담당하는 서비스
-│   │   │               │   ├── dropColumn.java       # 테이블에서 컬럼을 삭제하는 로직
-│   │   │               │   ├── exitDetection.java    # 이탈 감지 로직
-│   │   │               │   └── filter.java           # 데이터 필터링 로직
-│   │   │               └── kafkaApplication.java     # 애플리케이션의 메인 실행 파일
-│   └── resources
-│       ├── application.properties                     # Spring Boot 애플리케이션 설정 파일
-│       └── kafka-config.yml                           # Kafka 관련 설정 파일
-```
-
 ## 🎯 주요 기능
 
 이 프로젝트는 웹 로그 데이터를 실시간으로 처리하고 다양한 분석과 데이터 처리를 수행할 수 있는 기능을 제공합니다. 
@@ -99,7 +62,7 @@ Kafka와 Spring Boot를 활용하여 웹에서 생성되는 로그 데이터를 
    - 이를 통해 로그 데이터를 분석 가능한 형태로 변환할 수 있습니다.
 
 3. **분기 처리**
-   - 특정 조건을 기반으로 데이터를 다른 경로로 분기 처리하여 다양한 시나리오에 맞게 데이터를 처리할 수 있습니다.
+   - 특정 조건을 기반으로 데이터를 분기 처리하여 다양한 시나리오에 맞게 데이터를 처리할 수 있습니다.
 
 4. **이탈 감지**
    - Debezium과 Kafka를 활용하여 사용자 활동에서 이상 징후를 감지하고, 이탈 상황을 실시간으로 모니터링합니다.
@@ -109,7 +72,7 @@ Kafka와 Spring Boot를 활용하여 웹에서 생성되는 로그 데이터를 
    - JDBC Sink Connector를 통해 Kafka에서 수집된 데이터를 MySQL 데이터베이스에 저장합니다.
 
 6. **일시정지 및 재가동**
-   - API 호출을 통해 각 Connector별로 일시정지 및 재가동을 가능하게 만들어 시스템 운용을 용이하게 만들었습니다.
+   - API 호출을 통해 각 Connector별로 일시정지 및 재가동을 가능하게 만들어 운용을 용이하게 만들었습니다.
 
 ## 📝 API 호출 사용법
 
